@@ -197,4 +197,4 @@ cython_debug/
 
 # config files
 
-.ini
+*.ini
