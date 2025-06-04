@@ -47,6 +47,15 @@ class Database:
         :return: Liste der gefundenen Datensätze.
         """
         return self.db.search(where(field) == value)
+    
+    def get_by_topic(self, topic: str) -> list:
+        """
+        Sucht nach allen Datensätzen mit genau diesem MQTT-Topic.
+
+        :param topic: Das vollständige Topic, z. B. 'iot1/teaching_factory/drop_oscillation'
+        :return: Liste aller Datensätze (als Dicts), deren 'topic' genau diesem Wert entspricht.
+        """
+        return self.db.search(where('topic') == topic)
 
     def update(self, field: str, value, key: str, new_value) -> int:
         """
