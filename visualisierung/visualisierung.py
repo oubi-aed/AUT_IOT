@@ -61,7 +61,7 @@ qc_config = {
     "data": {
         "labels": qc_labels,
         "datasets": [{
-            "label": "Drop Oscillation (Sampled every 10th)",
+            "label": "Drop Oscillation (Sampled every 5th)",
             "data": qc_data,
             "borderColor": "green",
             "fill": False
@@ -69,7 +69,7 @@ qc_config = {
     },
     "options": {
         "title": {
-            "display": True,
+            "display": False,
             "text": "Drop Oscillation (QuickChart, gesampelt)"
         },
         "scales": {
