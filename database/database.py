@@ -75,3 +75,35 @@ class Database:
         Schließt die Datenbank.
         """
         self.db.close()
+
+if __name__ == "__main__":
+    # Beispielverwendung der Database-Klasse
+    db = Database('db.json')
+    
+    # Einfügen eines Datensatzes
+    data_id = db.insert({'name': 'Alice', 'age': 30})
+    print(f'Datensatz eingefügt mit ID: {data_id}')
+    db.insert({'name': 'Alice', 'age': 30})
+    
+    # Einfügen mehrerer Datensätze
+    ids = db.insert_multiple([{'name': 'Bob', 'age': 25}, {'name': 'Charlie', 'age': 35}])
+    print(f'Mehrere Datensätze eingefügt mit IDs: {ids}')
+    
+    # Alle Datensätze abrufen
+    all_data = db.get_all()
+    print('Alle Datensätze:', all_data)
+    
+    # Suchen nach einem Datensatz
+    search_result = db.search('name', 'Alice')
+    print('Suchergebnis:', search_result)
+    
+    # Aktualisieren eines Datensatzes
+    updated_count = db.update('name', 'Alice', 'age', 31)
+    print(f'Anzahl aktualisierter Datensätze: {updated_count}')
+    
+    # Entfernen eines Datensatzes
+    removed_count = db.remove('name', 'Bob')
+    print(f'Anzahl entfernter Datensätze: {removed_count}')
+    
+    # Schließen der Datenbank
+    db.close()
