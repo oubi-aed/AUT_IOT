@@ -41,7 +41,7 @@ os.makedirs(png_dir, exist_ok=True)
 png_path = os.path.join(png_dir, 'drop_oscillation.png')
 
 plt.figure(figsize=(6, 4))
-plt.plot(range(len(drop_values)), drop_values, marker='o', linestyle='-')
+plt.plot(range(len(drop_values)), drop_values, marker='o', linestyle='-', color='green')
 plt.title("Drop Oscillation")
 plt.xlabel("Index")
 plt.ylabel("Wert")
@@ -52,7 +52,7 @@ plt.close()
 print(f"PNG-Datei gespeichert: {png_path}")
 
 # 9. QuickChart-URL zusammenbauen (sampling, um URL-Länge zu begrenzen)
-sample_step = 1
+sample_step = 5
 qc_labels = list(range(0, len(drop_values), sample_step))
 qc_data = drop_values[::sample_step]
 
@@ -100,7 +100,7 @@ md_lines = [
     "_Topic: iot1/teaching_factory/drop_oscillation_\n\n",
     "## Lokale PNG-Datei\n\n",
     f"![Drop Oscillation PNG](https://github.com/oubi-aed/AUT_IOT/blob/main/reports/plots/drop_oscillation.png)\n\n",
-    "## QuickChart-Embed (statische Grafik von quickchart.io)\n\n",
+    "## QuickChart-Embed (statische Grafik von quickchart.io mit Sample Step = 5)\n\n",
     f"![Drop Oscillation QuickChart]({quickchart_url})\n"
 ]
 
