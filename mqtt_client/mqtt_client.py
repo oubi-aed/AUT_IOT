@@ -1,6 +1,13 @@
 import paho.mqtt.client as mqtt
 import configparser
-from database import Database
+
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from database.database import Database
+
+
 
 # 1. ConfigParser-Objekt erstellen und Datei laden
 config = configparser.ConfigParser()
@@ -15,30 +22,8 @@ port = config.getint('MQTT', 'port')
 # 3. Datenbank initialisieren
 db = Database(db_path='db.json')
 
-topic = "iot1/teachingfactory"
+topic = "iot1/teaching_factory/#"
 payload = "on"
-
-#send data to broker
-def send_data_to_broker(topic, payload):
-
-    # create function for callback
-    def on_publish(client, userdata, flags, reasonCode, properties):
-        print("data published \n")
-
-    # create client object
-    mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-    mqttc.username_pw_set(user, password)              
-
-    # assign function to callback
-    mqttc.on_publish = on_publish                          
-
-    # establish connection
-    mqttc.connect(broker,port)                                 
-
-    # publish
-    return_code = mqttc.publish(topic, payload)
-
-    mqttc.disconnect()
 
 
 
