@@ -52,8 +52,7 @@ plt.close()
 print(f"PNG-Datei gespeichert: {png_path}")
 
 # 9. QuickChart-URL zusammenbauen (sampling, um URL-Länge zu begrenzen)
-#    Wir nehmen jeden 10. Punkt, damit die URL nicht zu lang wird.
-sample_step = 10
+sample_step = 1
 qc_labels = list(range(0, len(drop_values), sample_step))
 qc_data = drop_values[::sample_step]
 
@@ -64,7 +63,7 @@ qc_config = {
         "datasets": [{
             "label": "Drop Oscillation (Sampled every 10th)",
             "data": qc_data,
-            "borderColor": "blue",
+            "borderColor": "green",
             "fill": False
         }]
     },
@@ -100,7 +99,7 @@ md_lines = [
     "# Drop Oscillation Plot\n\n",
     "_Topic: iot1/teaching_factory/drop_oscillation_\n\n",
     "## Lokale PNG-Datei\n\n",
-    f"![Drop Oscillation PNG]({'reports/plots/drop_oscillation.png'})\n\n",
+    f"![Drop Oscillation PNG](https://github.com/oubi-aed/AUT_IOT/blob/main/reports/plots/drop_oscillation.png)\n\n",
     "## QuickChart-Embed (statische Grafik von quickchart.io)\n\n",
     f"![Drop Oscillation QuickChart]({quickchart_url})\n"
 ]
