@@ -54,9 +54,6 @@ fig.update_layout(
 # 9. Den Plotly-Chart als HTML-DIV exportieren (inkl. Plotly.js via CDN)
 html_div = fig.to_html(include_plotlyjs='cdn', full_html=False)
 
-# 10. Markdown-Datei-Pfad festlegen und Ordner anlegen
-md_path = os.path.join('reports', 'drop_oscillation.md')
-os.makedirs(os.path.dirname(md_path), exist_ok=True)
 
 # 11. Markdown-Inhalt zusammenstellen
 md_lines = [
@@ -67,10 +64,10 @@ md_lines = [
 ]
 
 # 12. In die Markdown-Datei schreiben
-with open(md_path, 'w', encoding='utf-8') as f:
+with open('README.md', 'w', encoding='utf-8') as f:
     f.writelines(md_lines)
 
-print(f"Markdown mit Plotly-Chart wurde erstellt: {md_path}")
+print(f"Markdown mit Plotly-Chart wurde erstellt: {'README.md'}")
 
 # 13. Datenbank schließen
 db.close()
