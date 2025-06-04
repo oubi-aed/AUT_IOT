@@ -100,7 +100,7 @@ md_lines = [
     "# Drop Oscillation Plot\n\n",
     "_Topic: iot1/teaching_factory/drop_oscillation_\n\n",
     "## Lokale PNG-Datei\n\n",
-    f"![Drop Oscillation PNG]({png_path})\n\n",
+    f"![Drop Oscillation PNG]({'drop_oscillation.png'})\n\n",
     "## QuickChart-Embed (statische Grafik von quickchart.io)\n\n",
     f"![Drop Oscillation QuickChart]({quickchart_url})\n"
 ]

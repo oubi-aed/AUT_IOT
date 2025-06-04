@@ -4,7 +4,7 @@ _Topic: iot1/teaching_factory/drop_oscillation_
 
 ## Lokale PNG-Datei
 
-![Drop Oscillation PNG](reports\plots\drop_oscillation.png)
+![Drop Oscillation PNG](drop_oscillation.png)
 
 ## QuickChart-Embed (statische Grafik von quickchart.io)
 
