@@ -17,5 +17,17 @@ _Topic: iot1/teaching_factory/drop_oscillation_
 
 # Regressionsmodell
 ## Ergebnisse 
-
+| Genutzte Spalten         | Modell-Typ      | MSE-Wert (Training) | MSE-Wert (Test) |
+|--------------------------|-----------------|---------------------|-----------------|
+|vibration_index_red, fill_level_grams_red, vibration_index_blue, fill_level_grams_blue, vibration_index_green, fill_level_grams_green                 | Linear          | 0.083                 | 0.12             |
+| vibration_index_red, fill_level_grams_red, vibration_index_blue, fill_level_grams_blue, vibration_index_green, fill_level_grams_green                      | random forest           | 3.65               | 15.24             |
 ## Formel für lineares Regressionsmodell
+$$
+y = 0.08936234 \cdot \text{vibration\_index\_red} +
+    0.00240508 \cdot \text{fill\_level\_grams\_red} +
+    0.10002018 \cdot \text{vibration\_index\_blue} +
+    0.00056773 \cdot \text{fill\_level\_grams\_blue} +
+    0.0837675 \cdot \text{vibration\_index\_green} -
+    0.02656935 \cdot \text{fill\_level\_grams\_green}
+$$
+
