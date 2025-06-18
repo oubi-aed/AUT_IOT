@@ -1,3 +1,11 @@
+# Automatisierungstechnik IOT
+## Autoren
+
+- Manuel H.
+- Maximilian S.
+- Alexander O.
+
+
 # Data Aquise Teaching Factory
 Es wird ein MQTT-Client in Python verwendet, um Nachrichten von einem MQTT-Broker zu empfangen. Die Zugangsdaten und Verbindungsinformationen werden aus einer Konfigurationsdatei geladen. Nach dem Verbindungsaufbau abonniert der Client ein bestimmtes Topic und verarbeitet eingehende Nachrichten automatisch. Jede empfangene Nachricht wird in einer lokalen Datenbank gespeichert. So können MQTT-Nachrichten einfach gesammelt und weiterverarbeitet werden.
 
@@ -33,3 +41,5 @@ _Topic: iot1/teaching_factory/drop_oscillation_
  | mean, min, max, std, fourier-features             | Log. Regression                |  0.93                    |    0.8             |
 | mean, min, max, std     | Log. Regression    |   0                   |  0               |
 
+### Auswertung
+Das Modell mit den Fourier-Features erzielte eine akzeptable Leistung, während das Modell ohne Fourier-Features aufgrund der geringen Anzahl an Trainingsdaten keine sinnvollen Ergebnisse lieferte.
