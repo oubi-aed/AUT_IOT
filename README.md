@@ -25,3 +25,11 @@ _Topic: iot1/teaching_factory/drop_oscillation_
 
 <pre> y = 0.08936234 * vibration_index_red + 0.00240508 * fill_level_grams_red + 0.10002018 * vibration_index_blue + 0.00056773 * fill_level_grams_blue + 0.0837675 * vibration_index_green - 0.02656935 * fill_level_grams_green </pre>
 
+
+# Klassifikationsmodell 
+### Ergebnisse 
+| Genutzte Features     | Modell-Typ         | F1-Score (Training) | F1-Score (Test) |
+|-----------------------|--------------------|----------------------|-----------------|
+ | mean, min, max, std, fourier-features             | Log. Regression                |  0.93                    |    0.8             |
+| mean, min, max, std     | Log. Regression    |   0                   |  0               |
+
